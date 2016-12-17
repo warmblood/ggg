@@ -24,3 +24,4 @@ function GetLocalStorage(sName, Name, str) {
         }    
     }
 }
+//自己写的若有错误请指点
