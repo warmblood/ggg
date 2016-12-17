@@ -1,0 +1,26 @@
+function GetLocalStorage(sName, Name, str) {
+    if (localStorage[sName]) {
+        var localStr = localStorage[sName];
+        var json = JSON.parse(localStr);
+        if(str){
+            json[Name] = str;
+            localStorage.setItem(sName, JSON.stringify(json));
+        } else{
+            if (json[Name] || json[name] == "undefined") {
+                if(str){
+                    json[Name] = str;
+                    localStorage.setItem(sName, JSON.stringify(json));
+                } else {
+                    jsonStr = json[Name].replace(/'/g, '"');
+                    if(jsonStr.indexOf("{")){
+                        return JSON.parse(jsonStr);
+                    } else {
+                        return json[Name]  
+                    }
+                }
+            } else {
+                return "{}";
+            }
+        }    
+    }
+}
